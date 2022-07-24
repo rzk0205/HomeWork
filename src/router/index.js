@@ -1,23 +1,34 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import RenTable from '../views/RenTable.vue'
+import Home from '../views/Home.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'Home',
+    component: Home
   },
   {
-    path: '/RenTable',
-    name: 'RenTable',
-    component: RenTable
+    path: '/form',
+    name: 'form',
+    component: () => import('../views/Form.vue')
+  },
+  {
+    path: '/formview',
+    name: 'formview',
+    component: () => import('../views/FormView.vue')
+  },
+  {
+    path: '/advert',
+    name: 'advert',
+    component: () => import('../views/Advert.vue')
   }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

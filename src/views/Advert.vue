@@ -1,23 +1,9 @@
 <template>
   <div class="article-container">
-    <yang-table
-      :format="formatData"
-      :column="column"
-      init-request
-      index
-      url="/article/advert/search"
-      method="POST"
-    >
+    <yang-table :format="formatData" :column="column" init-request index url="/article/advert/search" method="POST">
       <template v-slot:operation="slot">
-        <el-button type="primary" @click="handleEdit(slot)" icon="el-icon-edit"
-          >编辑</el-button
-        >
-        <el-button
-          type="danger"
-          @click="handleDelete(slot)"
-          icon="el-icon-delete"
-          >删除</el-button
-        >
+        <el-button type="primary" @click="handleEdit(slot)" icon="el-icon-edit">编辑</el-button>
+        <el-button type="danger" @click="handleDelete(slot)" icon="el-icon-delete">删除</el-button>
       </template>
     </yang-table>
   </div>
@@ -26,7 +12,7 @@
 <script>
 export default {
   name: 'Advert',
-  data() {
+  data () {
     return {
       column: [
         {
@@ -43,13 +29,7 @@ export default {
           prop: 'advertUrl',
           type: 'function',
           callback: (item) => {
-            return (
-              '<a href="' +
-              item.advertUrl +
-              '" target="_blank">' +
-              item.advertUrl +
-              '</a>'
-            )
+            return '<a href="' + item.advertUrl + '" target="_blank">' + item.advertUrl + '</a>'
           }
         },
         {
@@ -74,13 +54,13 @@ export default {
     yangTable: () => import('../components/table/index.vue')
   },
   methods: {
-    handleEdit(row) {
+    handleEdit (row) {
       console.log(row)
     },
-    handleDelete(row) {
+    handleDelete (row) {
       console.log(row)
     },
-    formatData(response) {
+    formatData (response) {
       console.log('--', response)
       return response.data.records
     }
@@ -88,4 +68,6 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
