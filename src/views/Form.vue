@@ -1,13 +1,18 @@
 <template>
   <div>
-    <yang-form :item="formItem" :field="formField" :button="formButton" :before-submit="handleBeforeSubmit"></yang-form>
+    <yang-form
+      :item="formItem"
+      :field="formField"
+      :button="formButton"
+      :before-submit="handleBeforeSubmit"
+    ></yang-form>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Form',
-  data () {
+  data() {
     return {
       formButton: [
         { label: '提交', key: 'submit', type: 'primary' },
@@ -76,7 +81,7 @@ export default {
     yangForm: () => import('../components/form/index')
   },
   methods: {
-    handleBeforeSubmit () {
+    handleBeforeSubmit() {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           // eslint-disable-next-line prefer-promise-reject-errors
@@ -88,6 +93,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
