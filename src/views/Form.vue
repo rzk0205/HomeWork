@@ -1,11 +1,11 @@
 <template>
   <div>
-    <yang-form
+    <r-form
       :item="formItem"
       :field="formField"
       :button="formButton"
       :before-submit="handleBeforeSubmit"
-    ></yang-form>
+    ></r-form>
   </div>
 </template>
 
@@ -78,7 +78,7 @@ export default {
     }
   },
   components: {
-    yangForm: () => import('../components/form/index')
+    RForm: () => import('../components/form/index')
   },
   methods: {
     handleBeforeSubmit() {

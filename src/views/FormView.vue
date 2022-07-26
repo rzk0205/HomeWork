@@ -1,6 +1,6 @@
 <template>
   <div>
-    <yang-form :item="formItem" :button="formButton"></yang-form>
+    <r-form :item="formItem" :button="formButton"></r-form>
   </div>
 </template>
 
@@ -8,9 +8,9 @@
 export default {
   name: 'FormView',
   components: {
-    yangForm: () => import('../components/form/index.vue')
+    RForm: () => import('../components/form/index.vue')
   },
-  data () {
+  data() {
     return {
       formButton: [
         { label: '提交', key: 'submit', type: 'primary' },
@@ -40,13 +40,8 @@ export default {
       ]
     }
   },
-  methods: {
-
-  }
-
+  methods: {}
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
